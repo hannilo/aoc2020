@@ -2,11 +2,11 @@ package ee.hannilo.adventofcode.day3
 
 import mu.KotlinLogging
 
-private val logger = KotlinLogging.logger {}
-
 class Day3 {
 
   companion object {
+    private val logger = KotlinLogging.logger {}
+
     fun countTreesOnSlope(topology: TreeTopology, slope: TobogganSlope): Int {
       var position: TobogganSlopePosition
       val res = topology.rows.foldIndexed(0) { index, acc, _ ->

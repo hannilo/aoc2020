@@ -4,7 +4,6 @@ import ee.hannilo.adventofcode.day3.*
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 import java.math.BigDecimal
-import java.text.ParseException
 
 class Day3Test {
 
@@ -95,11 +94,11 @@ class Day3Test {
       "...",
       "....",
     )
-    Assertions.assertThrows(ParseException::class.java) { TreeTopology(list) }
+    Assertions.assertThrows(IllegalArgumentException::class.java) { TreeTopology(list) }
   }
 
   @Test
-  fun parseInvalidSymbol_Throws() {
+  fun parseInvalidSymbol_throws() {
     val list = listOf(
       "####",
       "....",
@@ -107,7 +106,7 @@ class Day3Test {
       "...?",
       "....",
     )
-    Assertions.assertThrows(ParseException::class.java) { TreeTopology(list) }
+    Assertions.assertThrows(IllegalArgumentException::class.java) { TreeTopology(list) }
   }
 
   @Test

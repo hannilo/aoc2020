@@ -1,10 +1,11 @@
 package ee.hannilo.adventofcode.day2.policy
 
+/**
+ * Checks if occurrence of the policy char is within the policy range
+ * */
 class SledPolicy: SingleCharPolicy {
   override fun validate(password: String, policyMetadata: SingleCharPolicyMetadata): Boolean {
-    val countInStr = password.fold(0) { acc, ch ->
-      if (ch == policyMetadata.char) acc + 1 else acc
-    }
-    return countInStr in policyMetadata.first..policyMetadata.last
+    val count = password.count { it == policyMetadata.char }
+    return count in policyMetadata.first..policyMetadata.last
   }
 }

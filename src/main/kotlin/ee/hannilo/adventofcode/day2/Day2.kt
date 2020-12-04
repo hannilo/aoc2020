@@ -5,11 +5,10 @@ import ee.hannilo.adventofcode.day2.policy.SingleCharPolicyMetadata
 import mu.KotlinLogging
 import java.lang.IllegalArgumentException
 
-private val logger = KotlinLogging.logger {}
-
 class Day2 {
 
   companion object {
+    private val logger = KotlinLogging.logger {}
 
     private val regex = Regex("(\\d+)-(\\d+) (\\S): (\\S+)")
 

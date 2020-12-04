@@ -4,11 +4,10 @@ import mu.KotlinLogging
 import java.util.*
 import kotlin.math.log
 
-private val logger = KotlinLogging.logger {}
-
 class Day1 {
 
   companion object {
+    private val logger = KotlinLogging.logger {}
 
     fun findSum(input: List<Int>, sumToSearch: Int): Pair<Int, Int>? {
       assert(input.size > 1) { "Should have at least 2 elements" }

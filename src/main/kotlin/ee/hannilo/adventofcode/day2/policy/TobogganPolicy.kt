@@ -2,8 +2,9 @@ package ee.hannilo.adventofcode.day2.policy
 
 import mu.KotlinLogging
 
-private val logger = KotlinLogging.logger {}
-
+/**
+ * Checks if *exactly one* of policy indices in the string contains the policy char
+ * */
 class TobogganPolicy : SingleCharPolicy {
   override fun validate(password: String, policyMetadata: SingleCharPolicyMetadata): Boolean {
     if (policyMetadata.last > password.length) {
@@ -17,5 +18,9 @@ class TobogganPolicy : SingleCharPolicy {
           "${password[policyMetadata.first - 1]}^${password[policyMetadata.last - 1]} : $res"
     }
     return res
+  }
+
+  companion object {
+    private val logger = KotlinLogging.logger {}
   }
 }
