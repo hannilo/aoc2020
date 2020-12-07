@@ -22,13 +22,13 @@ class Day1Test {
 
   //SOLUTIONS
   @Test
-  fun verifySolution1() {
+  fun verifyPart1() {
     val solution = Day1.findSum(testinput, 2020)?.let { it.first * it.second }
     Assertions.assertEquals(514579, solution)
   }
 
   @Test
-  fun solution1() {
+  fun part1() {
     println(input)
     val pair = Day1.findSum(input, 2020)!!
     val solution = pair.first * pair.second

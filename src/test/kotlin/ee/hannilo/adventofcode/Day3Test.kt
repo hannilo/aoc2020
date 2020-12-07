@@ -27,13 +27,13 @@ class Day3Test {
 
   // SOLUTIONS
   @Test
-  fun verifySolution1() {
+  fun verifyPart1() {
     val slope = TobogganSlope(3, 1)
     Assertions.assertEquals(7, Day3.countTreesOnSlope(TreeTopology(testInput), slope))
   }
 
   @Test
-  fun solution1() {
+  fun part1() {
     val topo = TreeTopology(input)
     val slope = TobogganSlope(3, 1)
 

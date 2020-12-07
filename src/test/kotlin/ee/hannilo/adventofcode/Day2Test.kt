@@ -20,13 +20,13 @@ class Day2Test {
 
   //SOLUTIONS
   @Test
-  fun verifySolution1() {
+  fun verifyPart1() {
     val valids = Day2.getValids(testinput, SledPolicy())
     Assertions.assertEquals(2, valids.size)
   }
 
   @Test
-  fun solution1() {
+  fun part1() {
     val valids = Day2.getValids(input, SledPolicy())
     Assertions.assertEquals(396, valids.size)
   }

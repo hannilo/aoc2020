@@ -29,7 +29,7 @@ class Day4Test {
 
   //SOLUTIONS
   @Test
-  fun verifySolution1() {
+  fun verifyPart1() {
     val validator = PassportFieldValidator()
     val passports = Day4.parsePassportList(testinput)
     val (valid, invalid) = Day4.validate(passports, validator)
@@ -38,7 +38,7 @@ class Day4Test {
   }
 
   @Test
-  fun solution1() {
+  fun part1() {
     val validator = PassportFieldValidator()
     val passports = Day4.parsePassportList(input)
     val (valid, invalid) = Day4.validate(passports, validator)

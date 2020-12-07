@@ -22,13 +22,13 @@ class Day5Test {
 
   //SOLUTIONS
   @Test
-  fun verifySolution1() {
+  fun verifyPart1() {
     val pass = Day5.parse(testinput).maxByOrNull { p -> p.id }!!
     Assertions.assertEquals(820, pass.id)
   }
 
   @Test
-  fun solution1() {
+  fun part1() {
     val max = input.maxByOrNull { p -> p.id }!!
     println(max)
     Assertions.assertEquals(861, max.id)
