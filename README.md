@@ -19,3 +19,11 @@ Validate existence and value of entries in a map.
 ##### Day 5
 
 Parse a string as a binary number.
+
+##### Day 6
+
+Group strings into sets of characters.
+
+##### Day 7
+
+Find contained/container nodes in an acyclic directed graph.
