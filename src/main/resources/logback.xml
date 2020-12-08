@@ -10,7 +10,7 @@
         </layout>
     </appender>
 
-    <logger name="ee.hannilo" level="trace" additivity="false">
+    <logger name="ee.hannilo" level="debug" additivity="false">
         <appender-ref ref="CONSOLE"/>
     </logger>
 

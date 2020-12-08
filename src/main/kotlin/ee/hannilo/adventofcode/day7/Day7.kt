@@ -1,5 +1,6 @@
 package ee.hannilo.adventofcode.day7
 
+import ee.hannilo.adventofcode.StopWatch
 import mu.KotlinLogging
 import java.lang.IllegalArgumentException
 import java.util.*
@@ -25,11 +26,11 @@ class Day7(list: List<String>) {
   }
 
   fun findContainers(searchColor: String): Set<String> {
+    val timer = StopWatch.start()
     val searchQueue = LinkedList(getContainingColors(searchColor))
     val ancestors = searchQueue.toMutableSet()
     val visited = mutableSetOf<String>()
     logger.debug { "Found ${searchQueue.size} bags containing $searchColor : $searchQueue" }
-    var iterations = 1
 
     while (searchQueue.isNotEmpty()) {
       val currentColor = searchQueue.poll()
@@ -37,17 +38,17 @@ class Day7(list: List<String>) {
       val currentContainers = getContainingColors(currentColor)
       logger.debug { "Found ${currentContainers.size} bags containing $currentColor : $currentContainers, " +
           "remaining queue: ${searchQueue.size}, visited ${visited.size}" }
-      iterations += 1
       ancestors.addAll(currentContainers)
       searchQueue.addAll(currentContainers.filter {
         it != searchColor && !searchQueue.contains(it) && !visited.contains(it)
       })
     }
-    logger.info { "Found ${ancestors.size} containers in $iterations queries" }
+    logger.info { "Found ${ancestors.size} containers in ${visited.size} queries, took ${timer.lap()} ms" }
     return ancestors
   }
 
   fun findChildren(searchColor: String): Map<String, Int> {
+    val timer = StopWatch.start()
     val bag = bags[searchColor]!!
     val searchQueue = LinkedList(bag.container.entries.map { BagCount(it.key, it.value) })
     val childMap = bag.container.toMutableMap()
@@ -76,7 +77,7 @@ class Day7(list: List<String>) {
       }
     }
 
-    logger.info { "Found ${childMap.values.reduce(Int::plus)} descendants in $iterations queries" }
+    logger.info { "Found ${childMap.values.reduce(Int::plus)} contained bags in $iterations queries, took ${timer.lap()} ms" }
     return childMap
   }
 
