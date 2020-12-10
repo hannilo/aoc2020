@@ -12,7 +12,7 @@ class Day2Test {
 
   private val input = Util.readInputFile("Day2.txt").map { Day2.parseEntry(it) }
 
-  private val testinput = listOf(
+  private val testInput = listOf(
     "1-3 a: abcde",
     "1-3 b: cdefg",
     "2-9 c: ccccccccc",
@@ -21,7 +21,7 @@ class Day2Test {
   //SOLUTIONS
   @Test
   fun verifyPart1() {
-    val valids = Day2.getValids(testinput, SledPolicy())
+    val valids = Day2.getValids(testInput, SledPolicy())
     Assertions.assertEquals(2, valids.size)
   }
 
@@ -33,7 +33,7 @@ class Day2Test {
 
   @Test
   fun verifySolution2() {
-    val valids = Day2.getValids(testinput, TobogganPolicy())
+    val valids = Day2.getValids(testInput, TobogganPolicy())
     Assertions.assertEquals(1, valids.size)
   }
 

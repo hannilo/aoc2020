@@ -15,11 +15,11 @@ class Test {
 
     var delta = 1
     var tmp = 0
-    var curr = 0
+    var acc = 0
     (0..10).forEach { _ ->
-      println(curr)
-      tmp = curr
-      curr += delta
+      println(acc)
+      tmp = acc
+      acc += delta
       delta = tmp
     }
 
@@ -31,7 +31,7 @@ class Test {
 
     println()
 
-    (0..10).forEach {
+    (0..100L).forEach {
       println(recFib(it))
     }
   }
@@ -44,11 +44,18 @@ class Test {
     }
   }
 
-  private fun recFib(n: Int): Int {
-    return when (n) {
-      0 -> 0
-      1 -> 1
-      else -> (recFib(n - 1) + recFib(n - 2))
+  val recMemo = emptyMap<Long, Long>().toMutableMap()
+  private fun recFib(n: Long): Long {
+    return if (recMemo.containsKey(n)) {
+      recMemo[n]!!
+    } else {
+      when (n) {
+        0L -> 0L
+        1L -> 1L
+        else -> (recFib(n - 1) + recFib(n - 2))
+      }.also {
+        recMemo[n] = it
+      }
     }
   }
 

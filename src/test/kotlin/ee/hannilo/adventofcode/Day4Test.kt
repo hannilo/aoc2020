@@ -11,7 +11,7 @@ class Day4Test {
 
   private val input = readInputFile("Day4.txt")
 
-  private val testinput = """
+  private val testInput = """
     ecl:gry pid:860033327 eyr:2020 hcl:#fffffd
     byr:1937 iyr:2017 cid:147 hgt:183cm
 
@@ -31,7 +31,7 @@ class Day4Test {
   @Test
   fun verifyPart1() {
     val validator = PassportFieldValidator()
-    val passports = Day4.parsePassportList(testinput)
+    val passports = Day4.parsePassportList(testInput)
     val (valid, invalid) = Day4.validate(passports, validator)
     Assertions.assertEquals(2, valid.size)
     Assertions.assertEquals(2, invalid.size)
@@ -50,7 +50,7 @@ class Day4Test {
   @Test
   fun verifySolution2() {
     val validator = PassportFieldRegexValidator()
-    val passports = Day4.parsePassportList(testinput)
+    val passports = Day4.parsePassportList(testInput)
     val (valid, invalid) = Day4.validate(passports, validator)
     Assertions.assertEquals(2, valid.size)
     Assertions.assertEquals(2, invalid.size)
@@ -69,7 +69,7 @@ class Day4Test {
 
   @Test
   fun parsesPassportLines() {
-    val passports = Day4.parsePassportList(testinput)
+    val passports = Day4.parsePassportList(testInput)
     Assertions.assertEquals(4, passports.size)
     passports.forEach {
       println(it)
@@ -86,7 +86,7 @@ class Day4Test {
   @Test
   fun partitionsPassports() {
     val validator = PassportFieldValidator()
-    val passports = Day4.parsePassportList(testinput)
+    val passports = Day4.parsePassportList(testInput)
     val (valid, invalid) = Day4.validate(passports, validator)
     Assertions.assertEquals(2, valid.size)
     Assertions.assertEquals(2, invalid.size)

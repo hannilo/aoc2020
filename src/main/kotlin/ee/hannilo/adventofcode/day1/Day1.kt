@@ -1,65 +1,55 @@
 package ee.hannilo.adventofcode.day1
 
-import mu.KotlinLogging
 import java.util.*
-import kotlin.math.log
+
+/**
+ * Finds the first 2 numbers in the list with the given sum.
+ *
+ * Does not recurse.
+ * */
+fun List<Int>.findSum(sum: Int): Pair<Int, Int>? {
+  this.takeIf { it.size >= 2 }?.forEachIndexed { iIdx, i ->
+    this.forEachIndexed { jIdx, j ->
+      if (iIdx != jIdx && (sum - i) == j) return Pair(i, j)
+    }
+  }
+  return null
+}
 
 class Day1 {
 
   companion object {
-    private val logger = KotlinLogging.logger {}
 
     fun findSum(input: List<Int>, sumToSearch: Int): Pair<Int, Int>? {
-      assert(input.size > 1) { "Should have at least 2 elements" }
-      logger.info { "Finding $sumToSearch from 2 of ${input.size} elements: $input" }
-      val queue = LinkedList(input)
-      while (queue.peek() != null) {
-        val el = queue.poll()
-        val target = sumToSearch - el
-        queue.forEach {
-          if (it == target) {
-            logger.info { "$el + $it: ${el + it}" }
-            return Pair(el, it)
-          }
+      input.takeIf { input.size >= 2 }?.forEachIndexed { iIdx, i ->
+        input.forEachIndexed { jIdx, j ->
+          if (iIdx != jIdx && (sumToSearch - i) == j) return Pair(i, j)
         }
       }
-      logger.warn { "No pair found within $input" }
       return null
     }
 
-    /**
-     * Finds n numbers in input that add up to sumToSearch. Does not support negative sums.
-     * */
-    fun findSumN(input: List<Int>, sumToSearch: Int, n: Int): List<Int> {
+
+    fun findSumN(input: List<Int>, sumToSearch: Int, n: Int, startIdx: Int = 0): List<Int> {
       assert(input.size >= n) { "Should have at least $n elements, gave ${input.size} : $input, searching for $sumToSearch" }
+
+      //known input
       if (sumToSearch < 0) {
         return emptyList()
       }
-      //this is not efficient, recreates the queue every iteration, should be replaced by array idx access
-      val queue = LinkedList(input)
-      while (queue.size >= n) {
-        logger.trace { "Finding $sumToSearch from $n of ${queue.size} elements: $queue" }
 
-        val el = queue.poll()
-        val target = sumToSearch - el
-        if (target < 0) continue
+      if (n == 2) {
+        return findSum(input.subList(startIdx, input.size), sumToSearch)?.toList()?.reversed() ?: emptyList()
+      }
 
-        var result = emptyList<Int>()
-        if (n == 2) {
-          queue.forEach {
-            if (it == target) {
-              logger.info { "$el + $it: ${el + it}" }
-              result = listOf(it)
-            }
-          }
-        } else {
-          result = findSumN(queue, target, n - 1)
-        }
+      for (i in startIdx until input.size) {
+        val target = sumToSearch - input[i]
+        val result = findSumN(input, target, n - 1, i)
         if (result.isNotEmpty()) {
-          return result.toMutableList().apply { this.add(0, el) }
+          return listOf(input[i]) + result
         }
       }
-      logger.trace { "No result for $sumToSearch from $n of ${input.size} elements: $input" }
+
       return emptyList()
     }
   }

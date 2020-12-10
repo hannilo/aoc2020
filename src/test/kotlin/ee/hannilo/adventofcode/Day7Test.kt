@@ -8,7 +8,7 @@ class Day7Test {
 
   val searchColor = "shiny gold"
 
-  val testinput = """
+  val testInput = """
     light red bags contain 1 bright white bag, 2 muted yellow bags.
     dark orange bags contain 3 bright white bags, 4 muted yellow bags.
     bright white bags contain 1 shiny gold bag.
@@ -25,7 +25,7 @@ class Day7Test {
   //SOLUTIONS
   @Test
   fun validatePart1() {
-    val solver = Day7(testinput)
+    val solver = Day7(testInput)
     val containers = solver.findContainers(searchColor)
     println(containers)
     Assertions.assertEquals(4, containers.size)
@@ -41,7 +41,7 @@ class Day7Test {
 
   @Test
   fun validatePart2() {
-    val solver = Day7(testinput)
+    val solver = Day7(testInput)
     val children = solver.findChildren(searchColor)
     println(children)
     Assertions.assertEquals(32, children.values.reduce(Int::plus))
@@ -74,7 +74,7 @@ class Day7Test {
 
   @Test
   fun parsesBagRow() {
-    val solver = Day7(testinput)
+    val solver = Day7(testInput)
     val bags = solver.bags
     println(bags)
     Assertions.assertEquals(9, bags.size)

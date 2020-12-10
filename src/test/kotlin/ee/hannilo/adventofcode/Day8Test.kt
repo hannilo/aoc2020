@@ -9,7 +9,7 @@ class Day8Test {
 
   private val input = Util.readInputFile("Day8.txt")
 
-  private val testinput = """
+  private val testInput = """
     nop +0
     acc +1
     jmp +4
@@ -24,7 +24,7 @@ class Day8Test {
   //SOLUTIONS
   @Test
   fun validatePart1() {
-    val solver = Day8(testinput)
+    val solver = Day8(testInput)
     val acc = solver.run().acc
     Assertions.assertEquals(5, acc)
   }
@@ -39,7 +39,7 @@ class Day8Test {
 
   @Test
   fun validatePart2() {
-    val solver = Day8(testinput)
+    val solver = Day8(testInput)
     val alteration = solver.findFrameToAlter()!!
     solver.setRomInstruction(alteration.first, alteration.second)
     val res = solver.run()
@@ -68,7 +68,7 @@ class Day8Test {
 
   @Test
   fun parsesInstructions() {
-    val solver = Day8(testinput)
+    val solver = Day8(testInput)
     val stack = solver.getRom()
     Assertions.assertEquals(9, stack.size)
     Assertions.assertEquals(Instruction.NOP, stack.first().instruction)

@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test
 
 class Day6Test {
 
-  val testinput = """
+  val testInput = """
     abc
 
     a
@@ -28,7 +28,7 @@ class Day6Test {
 
   @Test
   fun verifyPart1() {
-    val groups = chunkListByBlanks(testinput)
+    val groups = chunkListByBlanks(testInput)
     println(groups)
 
     val distinctAnswers = groups.map { Day6.findDistinct(it) }
@@ -55,7 +55,7 @@ class Day6Test {
 
   @Test
   fun verifySolution2() {
-    val groups = chunkListByBlanks(testinput)
+    val groups = chunkListByBlanks(testInput)
     println(groups)
 
     val sum = groups.map { Day6.findIntersect(it) }.sumBy { it.size }

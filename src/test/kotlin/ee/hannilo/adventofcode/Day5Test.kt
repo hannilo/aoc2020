@@ -12,7 +12,7 @@ class Day5Test {
     BoardingPass(it)
   }
 
-  private val testinput = """
+  private val testInput = """
     BFFFFFBRRR
     FBFBBFFRLR
     BFFFBBFRRR
@@ -23,7 +23,7 @@ class Day5Test {
   //SOLUTIONS
   @Test
   fun verifyPart1() {
-    val pass = Day5.parse(testinput).maxByOrNull { p -> p.id }!!
+    val pass = Day5.parse(testInput).maxByOrNull { p -> p.id }!!
     Assertions.assertEquals(820, pass.id)
   }
 
@@ -54,7 +54,7 @@ class Day5Test {
 
   @Test
   fun parsesBoardingPass() {
-    val passes = Day5.parse(testinput)
+    val passes = Day5.parse(testInput)
     Assertions.assertEquals(5, passes.size)
     val iter = passes.iterator()
 
