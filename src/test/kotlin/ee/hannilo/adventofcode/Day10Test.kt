@@ -51,7 +51,10 @@ class Day10Test {
       .size
   }
 
-  fun findOptions(list: List<Int>): Long {
+  /**
+   * O(n) path count.
+   * */
+  fun countPaths(list: List<Int>): Long {
     val pathsFrom = mutableMapOf<Int, Long>()
     return list.windowed(4, 1, true).reversed().also { println(it) }
       .map { l ->
@@ -88,14 +91,14 @@ class Day10Test {
   @Test
   fun validatePart2() {
     val list = listOf(0) + testInput + listOf(testInput.last() + 3)
-    val options = findOptions(list)
+    val options = countPaths(list)
     assertEquals(19208, options)
   }
 
   @Test
   fun part2() {
     val list = listOf(0) + input + listOf(input.last() + 3)
-    val options = findOptions(list)
+    val options = countPaths(list)
     assertEquals(148098383347712, options)
   }
   //END SOLUTIONS
