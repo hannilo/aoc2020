@@ -1,11 +1,7 @@
 package ee.hannilo.adventofcode.day1
 
-import java.util.*
-
 /**
  * Finds the first 2 numbers in the list with the given sum.
- *
- * Does not recurse.
  * */
 fun List<Int>.findSum(sum: Int): Pair<Int, Int>? {
   this.takeIf { it.size >= 2 }?.forEachIndexed { iIdx, i ->

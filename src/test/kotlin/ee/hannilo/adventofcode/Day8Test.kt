@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test
 
 class Day8Test {
 
-  private val input = Util.readInputFile("Day8.txt")
+  private val input = Util.readInputLines("Day8.txt")
 
   private val testInput = """
     nop +0

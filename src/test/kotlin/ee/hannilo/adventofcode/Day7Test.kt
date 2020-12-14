@@ -20,7 +20,7 @@ class Day7Test {
     dotted black bags contain no other bags.
   """.trimIndent().lines()
 
-  private val input = Util.readInputFile("Day7.txt")
+  private val input = Util.readInputLines("Day7.txt")
 
   //SOLUTIONS
   @Test

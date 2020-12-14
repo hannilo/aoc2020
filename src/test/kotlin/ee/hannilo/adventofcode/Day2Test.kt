@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test
 
 class Day2Test {
 
-  private val input = Util.readInputFile("Day2.txt").map { Day2.parseEntry(it) }
+  private val input = Util.readInputLines("Day2.txt").map { Day2.parseEntry(it) }
 
   private val testInput = listOf(
     "1-3 a: abcde",

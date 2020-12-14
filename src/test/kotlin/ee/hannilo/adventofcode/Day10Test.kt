@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test
 
 class Day10Test {
 
-  private val input = Util.readInputFile("Day10.txt").map { it.toInt() }.sorted()
+  private val input = Util.readInputLines("Day10.txt").map { it.toInt() }.sorted()
 
   val testInput = """
     28

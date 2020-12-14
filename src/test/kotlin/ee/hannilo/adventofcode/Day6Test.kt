@@ -1,7 +1,7 @@
 package ee.hannilo.adventofcode
 
 import ee.hannilo.adventofcode.Util.Companion.chunkListByBlanks
-import ee.hannilo.adventofcode.Util.Companion.readInputFile
+import ee.hannilo.adventofcode.Util.Companion.readInputLines
 import ee.hannilo.adventofcode.day6.Day6
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
@@ -41,7 +41,7 @@ class Day6Test {
 
   @Test
   fun part1() {
-    val groups = chunkListByBlanks(readInputFile("Day6.txt"))
+    val groups = chunkListByBlanks(readInputLines("Day6.txt"))
     println(groups)
 
     val distinctAnswers = groups.map { Day6.findDistinct(it) }
@@ -64,7 +64,7 @@ class Day6Test {
 
   @Test
   fun solution2() {
-    val groups = chunkListByBlanks(readInputFile("Day6.txt"))
+    val groups = chunkListByBlanks(readInputLines("Day6.txt"))
     println(groups)
 
     val sum = groups.map { Day6.findIntersect(it) }.sumBy { it.size }

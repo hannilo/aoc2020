@@ -1,6 +1,6 @@
 package ee.hannilo.adventofcode
 
-import ee.hannilo.adventofcode.Util.Companion.readInputFile
+import ee.hannilo.adventofcode.Util.Companion.readInputLines
 import ee.hannilo.adventofcode.day4.Day4
 import ee.hannilo.adventofcode.day4.PassportFieldRegexValidator
 import ee.hannilo.adventofcode.day4.PassportFieldValidator
@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test
 
 class Day4Test {
 
-  private val input = readInputFile("Day4.txt")
+  private val input = readInputLines("Day4.txt")
 
   private val testInput = """
     ecl:gry pid:860033327 eyr:2020 hcl:#fffffd

@@ -1,6 +1,6 @@
 package ee.hannilo.adventofcode
 
-import ee.hannilo.adventofcode.Util.Companion.readInputFile
+import ee.hannilo.adventofcode.Util.Companion.readInputLines
 import ee.hannilo.adventofcode.day5.BoardingPass
 import ee.hannilo.adventofcode.day5.Day5
 import org.junit.jupiter.api.Assertions
@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test
 
 class Day5Test {
 
-  private val input = readInputFile("Day5.txt").map {
+  private val input = readInputLines("Day5.txt").map {
     BoardingPass(it)
   }
 

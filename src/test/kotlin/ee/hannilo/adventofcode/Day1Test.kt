@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test
 
 class Day1Test {
 
-  private val input = Util.readInputFile("Day1.txt")
+  private val input = Util.readInputLines("Day1.txt")
     .map { s: String ->
       Integer.parseInt(s)
     }

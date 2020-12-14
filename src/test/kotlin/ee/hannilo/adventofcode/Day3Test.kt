@@ -7,7 +7,7 @@ import java.math.BigDecimal
 
 class Day3Test {
 
-  private val input = Util.readInputFile("Day3.txt").map { s ->
+  private val input = Util.readInputLines("Day3.txt").map { s ->
     s.trim()
   }
 

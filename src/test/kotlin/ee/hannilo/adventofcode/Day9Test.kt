@@ -1,13 +1,13 @@
 package ee.hannilo.adventofcode
 
-import ee.hannilo.adventofcode.Util.Companion.readInputFile
+import ee.hannilo.adventofcode.Util.Companion.readInputLines
 import ee.hannilo.adventofcode.day9.Day9
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 
 class Day9Test {
 
-  private val input = readInputFile("Day9.txt").map { it.toLong() }
+  private val input = readInputLines("Day9.txt").map { it.toLong() }
 
   private val testInput = """
     35
