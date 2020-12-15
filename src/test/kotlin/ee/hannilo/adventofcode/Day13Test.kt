@@ -78,14 +78,6 @@ class Day13Test {
   }
 
   @Test
-  fun testDiffs() {
-    val list = parsePart2(testInput)
-    val first = list.first()
-    val tmp1 = getDiffTimestamp(first.first, list[1].first, list[1].second).also { println(it) }
-    val tmp2 = getDiffTimestamp(tmp1.first, list[2].first, list[2].second).also { println(it) }
-  }
-
-  @Test
   fun test() {
     val list = parsePart2(
       """
@@ -113,6 +105,9 @@ class Day13Test {
   /**
    * turns out this would help
    * https://en.wikipedia.org/wiki/Chinese_remainder_theorem
+   *
+   * also covered in
+   * https://math.stackexchange.com/questions/2218763/how-to-find-lcm-of-two-numbers-when-one-starts-with-an-offset
    * */
   @Test
   fun part2() {

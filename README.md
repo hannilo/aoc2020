@@ -39,3 +39,20 @@ List validation, find a contiguous sum from a list.
 ###### Day 10: Adapter Array
 
 Find all paths in a tree, with a catch.
+
+###### Day 11: Seating System
+
+Game of Life.
+
+###### Day 12: Rain Risk
+
+Field traversal using vectors.
+
+###### Day 13: Shuttle Search
+
+LCM with an offset. 
+
+###### Day 14: Docking Data
+
+Bitmasking with floating bits.
+
