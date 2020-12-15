@@ -56,7 +56,7 @@ class Day13Test {
   fun solvePart2(list: List<Pair<Long, Long>>): Long {
     var step = list.first().first
     var timestamp = 0L
-    //step forward in time by gcd (all inputs are prime!) until a match is found, then increase the gcd
+    //step forward in time by lcm (all inputs are prime!) until a match is found, then increase the step
     list.drop(1).forEach { (period, offset) ->
       while ((timestamp + offset) % period != 0L) {
         timestamp += step
@@ -87,7 +87,6 @@ class Day13Test {
     )
     var step = list.first().first
     var timestamp = 0L
-    //step forward in time by gcd until a match is found, then increase the gcd
     list.drop(1).forEach { (period, offset) ->
       while ((timestamp + offset) % period != 0L) {
         timestamp += step

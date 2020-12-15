@@ -69,7 +69,7 @@ class Day1Test {
   fun findTriple() {
     val list = listOf(1, 20, 3, 1100, 900, 4)
     val result = Day1.findSumN(list, 2020, 3)
-    assertEquals(listOf(20, 1100, 900), result)
+    assertEquals(listOf(20, 900, 1100), result)
   }
 
   @Test
