@@ -56,3 +56,10 @@ LCM with an offset.
 
 Bitmasking with floating bits.
 
+###### Day 15: Rambunctious Recitation
+
+Track the last occurrence in a Van Eck's sequence.
+
+###### Day 16: Ticket Translation
+
+Deduce field order by a set of rules.

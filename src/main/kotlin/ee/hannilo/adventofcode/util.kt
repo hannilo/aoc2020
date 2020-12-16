@@ -2,10 +2,10 @@ package ee.hannilo.adventofcode
 
 import java.io.File
 
-const val INPUT_DIR = "input"
-
 class Util {
   companion object {
+
+    private const val INPUT_DIR = "input"
 
     fun readInputFile(file: String): String {
       return File("${INPUT_DIR}/${file}").readText().trim()

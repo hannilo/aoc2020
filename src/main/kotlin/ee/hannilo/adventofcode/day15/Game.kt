@@ -1,5 +1,8 @@
 package ee.hannilo.adventofcode.day15
 
+/**
+ * https://oeis.org/A181391
+ * */
 class Game(init: String) {
 
   val memory = init.split(",").mapIndexed { idx, i -> i.toInt() to idx + 1 }.toMap().toMutableMap()
