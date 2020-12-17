@@ -63,3 +63,7 @@ Track the last occurrence in a Van Eck's sequence.
 ###### Day 16: Ticket Translation
 
 Deduce field order by a set of rules.
+
+###### Day 17: Conway Cubes
+
+3D, 4D Game of Life
