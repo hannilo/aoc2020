@@ -59,6 +59,13 @@ class Tile(val rows: List<String>, val id: String = "0") {
     )
   }
 
+  fun inner(): Tile {
+    return Tile(
+      rows.drop(1).dropLast(1).map { it.drop(1).dropLast(1) },
+      "$id-I"
+    )
+  }
+
   fun toDisplay(): String {
     return rows.joinToString("\n")
   }

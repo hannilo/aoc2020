@@ -1,5 +1,8 @@
 package ee.hannilo.adventofcode.day19
 
+/**
+ * @see <a href="https://en.wikipedia.org/wiki/Pushdown_automaton#PDA_and_context-free_languages">PDA & Context-Free Grammar</a>
+ * */
 class Matcher {
 
   val rules = mutableMapOf<Int, Rule>()
@@ -24,7 +27,7 @@ class Matcher {
     }
     val rule = rules[ruleList.first()]
     return if (rule is CharRule) {
-      // simple, just check if idx matches and continue on with the next rule at the next idx
+      // terminal, just check if idx matches and continue on with the next rule at the next idx
       string[position] == rule.char && matches(string, position + 1, ruleList.drop(1))
     } else {
       // "unwrap" the current rule to its subrules, add those to the front of the list of rules to check from this point onwards

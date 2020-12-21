@@ -67,3 +67,19 @@ Deduce field order by a set of rules.
 ###### Day 17: Conway Cubes
 
 3D, 4D Game of Life
+
+###### Day 18: Operation Order
+
+Mathematical operations, RPN
+
+###### Day 19: Monster Messages
+
+Parsing a CFG using a simplified PDA.
+
+###### Day 20: Jurassic Jigsaw
+
+Image stitching, pattern search.
+
+###### Day 21: Allergen Assessment
+
+Deduce matching pairs.
