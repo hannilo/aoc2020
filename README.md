@@ -83,3 +83,7 @@ Image stitching, pattern search.
 ###### Day 21: Allergen Assessment
 
 Deduce matching pairs.
+
+###### Day 22: Crab Combat
+
+Move cards between stacks.
