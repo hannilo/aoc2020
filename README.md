@@ -87,3 +87,15 @@ Deduce matching pairs.
 ###### Day 22: Crab Combat
 
 Move cards between stacks.
+
+###### Day 23: Crab Cups
+
+Track items in a cyclic graph.
+
+###### Day 24: Lobby Layout
+
+Hexagonal cellular automata.
+
+###### Day 25: Combo Breaker
+
+Discrete logarithm.
